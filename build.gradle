@@ -11,6 +11,11 @@ repositories {
     mavenCentral()
 }
 
+task execute(type: JavaExec) {
+    main = "Runner"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
 dependencies {
     // DL4J Imports
     compile group: 'org.nd4j', name: 'nd4j-native-platform', version:'0.9.1'

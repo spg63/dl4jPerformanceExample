@@ -1,0 +1,8 @@
+NOTE: This has only been tested with Java 8. Gradle build is failing on Java 11 and I have not
+bothered to look into a solution. 
+
+In order to run this using gradle:
+    In the root of this directory:
+        gradle -PmainClass=Runner execute
+
+

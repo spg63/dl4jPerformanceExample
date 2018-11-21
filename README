@@ -19,12 +19,12 @@ The repo should load up as an IntelliJ project if you would prefer to run it tha
 
 Training the same classifier 5 times serially:
     Intel 7920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
-        Average runtime: 
-        Total runtime:
+        Average runtime: 9,754 ms
+        Total runtime: 48,774 ms
 
     Intel 8700B, 16 GB ram, MacOS 10.14, 6 cores (12 threads)
-        Average runtime:
-        Total runtime:
+        Average runtime: 11,358 ms
+        Total runtime: 56,793 ms
 
     Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads)
         Average runtime:
@@ -40,10 +40,10 @@ Training the same classifier 5 times serially:
 
 Training the same 5 classifiers in parallel:
     Intel 7920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
-        Runtime:
+        Runtime: 35,926 ms
 
     Intel 8700B, 16 GB ram, MacOS 10.14, 6 cores (12 threads)
-        Runtime: 
+        Runtime: 46,211 ms
 
     Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads)
         Runtime:

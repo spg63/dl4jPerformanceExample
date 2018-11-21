@@ -12,6 +12,9 @@ In order to run this using gradle:
     In the root of this directory:
         gradle -PmainClass=Runner execute
 
+NOTE: Lombok version 1.18.4 is required for this build script to work with Java 11. This should be handled as a gradle
+import automatically.
+
 The repo should load up as an IntelliJ project if you would prefer to run it that way. 
 
 Training the same classifier 5 times serially:

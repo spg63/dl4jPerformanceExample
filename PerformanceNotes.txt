@@ -1,0 +1,29 @@
+Intel 7920HQ, 16 GB ram, MacOS 10.14
+    4 cores, 8 threads
+    Average runtime: 16,106 ms
+    1: 20,688 ms
+    2: 15,406 ms
+    3: 14,778 ms
+    4: 14,851 ms
+    5: 14,808 ms
+
+AMD 1950x, 64 GB ram, Windows 10 (whatever the current update is)
+    16 cores, 32 threads
+    Average runtime:
+    1:
+    2:
+    3:
+    4:
+    5:
+
+AMD 1700x, 32 GB ram, Ubuntu 16.04 LTS, 4.4.0-137-generic
+    8 cores, 16 threads
+    Average runtime:
+    1:
+    2:
+    3:
+    4:
+    5:
+
+Intel i7-8700B, 16 GB ram, MacOS 10.14
+    - 6 cores, 12 threads

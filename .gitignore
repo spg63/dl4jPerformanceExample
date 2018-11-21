@@ -1,0 +1,8 @@
+*.bin
+*.bat
+*.lock
+*.properties
+*.name
+*.jar
+*.class
+

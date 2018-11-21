@@ -31,19 +31,32 @@ Training the same classifier 5 times serially:
             Average runtime: 11.358 seconds
             Total runtime: 56.793 seconds
         1.0.0-beta3:
-            
+            Average runtime: 4.478 seconds
+            Total runtime: 22.390 seconds
 
     Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads)
-        Average runtime: 24.808 seconds
-        Total runtime: 119.167 seconds
+        0.9.1:
+            Average runtime: 24.808 seconds
+            Total runtime: 119.167 seconds
+        1.0.0-beta3:
+            Average runtime: 2.148 seconds
+            Total runtime: 10.743 seconds
 
     AMD 1700X, 32 GB ram, Ubuntu 16.04 LTS, 8 cores (16 threads)
-        Average runtime: 55.383 seconds
-        Total runtime: 276.917 seconds 
+        0.9.1:
+            Average runtime: 55.383 seconds
+            Total runtime: 276.917 seconds 
+        1.0.0-beta3:
+            Average runtime: 
+            Total runtime: 
 
     AMD 1950X, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
-        Average runtime: 85.282 seconds
-        Total runtime: 426.413 seconds
+        0.9.1:
+            Average runtime: 85.282 seconds
+            Total runtime: 426.413 seconds
+        1.0.0-beta3
+            Average runtime:
+            Total runtime: 
 
 Training the same 5 classifiers in parallel:
     Intel 6920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
@@ -53,16 +66,28 @@ Training the same 5 classifiers in parallel:
             Runtime: 11.590 seconds
 
     Intel 8700B, 16 GB ram, MacOS 10.14, 6 cores (12 threads)
-        Runtime: 46.211 seconds
+        0.9.1:
+            Runtime: 46.211 seconds
+        1.0.0-beta3:
+            Runtime: 14.478 seconds
 
-    Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads)
-        Runtime: 292.449 seconds
+    Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads 
+        0.9.1:
+            Runtime: 292.449 seconds
+        1.0.0-beta3:
+            Runtime: 11.417 seconds
 
     AMD 1700X, 32 GB ram, Ubuntu 16.04 LTS, 8 cores (16 threads)
-        Runtime: 46.967 seconds
+        0.9.1:
+            Runtime: 46.967 seconds
+        1.0.0-beta3:
+            Runtime: 
 
     AMD 1950X, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
-        Runtime: 810.631 seconds
+        0.9.1:
+            Runtime: 810.631 seconds
+        1.0.0-beta3:
+            Runtime: 
 
 I'm lost as far as how to proceed to solve this issue, if somebody sees something in the code that obviously won't work
 well for high core count CPUs please point it out, I need to get this resolved. 

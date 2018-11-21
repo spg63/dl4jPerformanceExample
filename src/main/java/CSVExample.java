@@ -69,12 +69,9 @@ public class CSVExample {
         log.info("Build model....");
         MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
                 .seed(seed)
-//                .iterations(iterations)
                 .activation(Activation.TANH)
                 .weightInit(WeightInit.XAVIER)
-//                .learningRate(0.1)
                 .updater(new Sgd(0.1))
-//                .regularization(true).l2(1e-4)
                 .l2(1e-4)
                 .list()
                 .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(3)
@@ -97,7 +94,6 @@ public class CSVExample {
 
         //evaluate the model on the test set
         Evaluation eval = new Evaluation(3);
-        //INDArray output = model.output(testData.getFeatureMatrix());
         INDArray output = model.output(testData.getFeatures());
         eval.eval(testData.getLabels(), output);
         log.info(eval.stats());

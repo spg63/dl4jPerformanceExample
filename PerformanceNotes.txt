@@ -1,6 +1,5 @@
-Training 5 classifiers serially (5000 iterations per training run):
-    Intel 7920HQ, 16 GB ram, MacOS 10.14
-        4 cores, 8 threads
+Training the same classifier 5 times (5000 iterations per training run):
+    Intel 7920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
         Average runtime: 10,068 ms
         1: 16,260 ms
         2: 9,385 ms
@@ -8,8 +7,7 @@ Training 5 classifiers serially (5000 iterations per training run):
         4: 8,248 ms
         5: 8,196 ms
 
-    AMD 1950x, 64 GB ram, Windows 10 (whatever the current update is)
-        16 cores, 32 threads
+    AMD 1950x, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
         Average runtime:
         1:
         2:
@@ -17,26 +15,23 @@ Training 5 classifiers serially (5000 iterations per training run):
         4:
         5:
 
-    AMD 1700x, 32 GB ram, Ubuntu 16.04 LTS, 4.4.0-137-generic
-        8 cores, 16 threads
-        Average runtime:
-        1: 60,621 ms
-        2: 55,341 ms
-        3: 55,592 ms
-        4:  ms
-        5:  ms
+    AMD 1700x, 32 GB ram, Ubuntu 16.04 LTS, 4.4.0-137-generic, 8 cores (16 threads)
+        Average runtime: 55,830 ms
+        1: 60,168 ms
+        2: 53,576 ms
+        3: 56,387 ms
+        4: 53,970 ms
+        5: 55,053 ms
 
-    Intel i7-8700B, 16 GB ram, MacOS 10.14
-        6 cores, 12 threads
-        Average runtime: 10,995 ms
-        1: 16,209 ms
-        2: 10,722 ms
-        3: 9,349 ms
-        4: 8,982 ms
-        5: 9,717 ms
+    Intel i7-8700B, 16 GB ram, MacOS 10.14, 6 cores (12 threads)
+        Average runtime: 10,963 ms
+        1: 15,603 ms
+        2: 11,066 ms
+        3: 9,812 ms
+        4: 8,950 ms
+        5: 9,387 ms
 
-    Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 
-        18 cores, 36 threads
+    Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads)
         Average runtime: 
         1:
         2:
@@ -45,4 +40,17 @@ Training 5 classifiers serially (5000 iterations per training run):
         5:
 
 Training 5 classifiers in parallel:
+    Intel 7920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
+        Runtime: 
     
+    AMD 1950x, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
+        Runtime: 
+
+    AMD 1700x, 32 GB ram, Ubuntu 16.04 LTS, 4.4.0-137-generic, 8 cores (16 threads)
+        Runtime:
+
+    Intel i7-8700B, 16 GB ram, MacOS 10.14, 6 cores (12 threads)
+        Runtime:
+
+    Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads)
+        Runtime:

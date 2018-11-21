@@ -5,26 +5,56 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Runner {
+    static int numSerialRuns = 5;
+
     public static void main(String[] args) throws Exception {
-        int numRuns = 5;
-        long totalMS = 0L;
+        List<Long> serialTimes = serial();
+        long parallelTime = parallel();
+
+        long serialRunTotal = 0L;
+        for(Long time : serialTimes)
+            serialRunTotal += time;
+        long serialAverage = serialRunTotal / numSerialRuns;
+
+        for(int i = 0; i < numSerialRuns; ++i)
+            System.out.println("Serial run #" + i + " took " + serialTimes.get(i) + " ms.");
+        System.out.println("Serial runtime average: " + serialAverage + " ms.");
+        System.out.println("Serial training took a total of " + serialRunTotal + " ms.");
+
+        System.out.println("Training " + numSerialRuns + " classifiers in parallel took " + parallelTime + " ms.");
+
+    }
+
+    public static List<Long> serial() throws Exception {
         List<Long> runTimes = new ArrayList<>();
 
-        for(int i = 0; i < numRuns; ++i){
+        for(int i = 0; i < numSerialRuns; ++i){
             CSVExample csvExample = new CSVExample();
             Stopwatch timer = Stopwatch.createStarted();
             csvExample.runClassifier();
             timer.stop();
-            long runMS = timer.elapsed(TimeUnit.MILLISECONDS);
-            System.out.println("Run #" + i + " took " + runMS + " ms");
-            totalMS += runMS;
-            runTimes.add(runMS);
+            runTimes.add(timer.elapsed(TimeUnit.MILLISECONDS));
         }
 
-        System.out.println("Total runtime for " + numRuns + " tests: " + totalMS + " ms.");
-        System.out.println("Average runtime: " + (totalMS / numRuns) + " ms.");
-        for(int i = 0; i < numRuns; ++i)
-            System.out.println("Run " + i + " took " + runTimes.get(i) + " ms");
+        return runTimes;
+    }
+
+    public static long parallel() throws InterruptedException {
+        List<Thread> threads = new ArrayList<>();
+
+        for(int i = 0; i < numSerialRuns; ++i)
+            threads.add(new Thread(new ParallelWrapper(new CSVExample())));
+
+        Stopwatch timer = Stopwatch.createStarted();
+
+        for(Thread t : threads)
+            t.start();
+
+        for(Thread t : threads)
+            t.join();
+
+        timer.stop();
+        return timer.elapsed(TimeUnit.MILLISECONDS);
 
     }
 }

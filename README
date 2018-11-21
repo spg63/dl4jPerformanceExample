@@ -8,9 +8,6 @@ Below are results for running this test on various CPUs, OSes, and ram configura
 unmodified except for increasing iterations from 1,000 to 5,000. The results seem to indicate that 
 higher core count CPUs, regardless of OS, ram configuration, or CPU vendor suffer significant performance penalties.
 
-NOTE: This has only been tested with Java 8. Gradle build is failing on Java 11 and I have not
-bothered to look into a solution. The windows timing code was tested in IntelliJ.
-
 In order to run this using gradle:
     In the root of this directory:
         gradle -PmainClass=Runner execute
@@ -18,7 +15,7 @@ In order to run this using gradle:
 The repo should load up as an IntelliJ project if you would prefer to run it that way. 
 
 Training the same classifier 5 times serially:
-    Intel 7920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
+    Intel 6920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
         Average runtime: 9,754 ms
         Total runtime: 48,774 ms
 
@@ -31,15 +28,15 @@ Training the same classifier 5 times serially:
         Total runtime:
 
     AMD 1700X, 32 GB ram, Ubuntu 16.04 LTS, 8 cores (16 threads)
-        Average runtime:
-        Total runtime:
+        Average runtime: 55,383 ms
+        Total runtime: 276,917 ms
 
     AMD 1950X, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
-        Average runtime:
-        Total runtime:
+        Average runtime: 85,282 ms
+        Total runtime: 426,413 ms
 
 Training the same 5 classifiers in parallel:
-    Intel 7920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
+    Intel 6920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
         Runtime: 35,926 ms
 
     Intel 8700B, 16 GB ram, MacOS 10.14, 6 cores (12 threads)
@@ -49,10 +46,32 @@ Training the same 5 classifiers in parallel:
         Runtime:
 
     AMD 1700X, 32 GB ram, Ubuntu 16.04 LTS, 8 cores (16 threads)
-        Runtime:
+        Runtime: 46,967 ms
 
     AMD 1950X, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
-        Runtime:
+        Runtime: 810,631 ms
 
 I'm lost as far as how to proceed to solve this issue, if somebody sees something in the code that obviously won't work
 well for high core count CPUs please point it out, I need to get this resolved. 
+
+Some questions:
+    - How is the 1700X training 5 classifiers in parallel faster than it can train a single classifier? 
+    - Why is the 1950x so much slower than the 1700x when they both have the same base clock (assuming worst case, no boost) 
+    when runnin serially?
+    - Why did the 1950x take significantly longer running in parallel when the 1700x saw a speedup running in parallel?
+    - Thread scheduling issue?
+    - NUMA issue?
+    - Cache thrashing?
+
+Some notes:
+    - All CPUs are adaquetly cooled 
+    - Where applicable, quad channel memory is enabled 
+    - No other major processes running during testing
+    - All CPUs and RAM running at default clocks
+    - Data is being read from an SSD 
+        - 1950X
+        - 6920HQ
+        - 8700B
+    - Data is being read from an HDD 
+        - 1700X
+        - 7980XE

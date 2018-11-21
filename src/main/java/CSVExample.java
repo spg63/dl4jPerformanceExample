@@ -61,7 +61,7 @@ public class CSVExample {
         final int numInputs = 4;
         int outputNum = 3;
         // Modified to get a longer runtime
-        int iterations = 10000;
+        int iterations = 5000;
         long seed = 6;
 
 

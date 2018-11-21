@@ -1,8 +1,10 @@
 NOTE: This has only been tested with Java 8. Gradle build is failing on Java 11 and I have not
-bothered to look into a solution. 
+bothered to look into a solution. The windows timing code was tested in IntelliJ, not through 
+calling gradles from the command line.
 
 In order to run this using gradle:
     In the root of this directory:
         gradle -PmainClass=Runner execute
 
+The repo should load up as an IntelliJ project if you would prefer to run it that way. 
 

@@ -43,20 +43,20 @@ Training the same classifier 5 times serially:
             Total runtime: 10.743 seconds
 
     AMD 1700X, 32 GB ram, Ubuntu 16.04 LTS, 8 cores (16 threads)
-        0.9.1:
+        0.9.1: [OpenBLAS]
             Average runtime: 55.383 seconds
             Total runtime: 276.917 seconds 
-        1.0.0-beta3:
-            Average runtime: 
-            Total runtime: 
+        1.0.0-beta3: [MKL]
+            Average runtime: 98.599 seconds
+            Total runtime: 492.995 seconds
 
     AMD 1950X, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
-        0.9.1:
+        0.9.1: [OpenBLAS]
             Average runtime: 85.282 seconds
             Total runtime: 426.413 seconds
-        1.0.0-beta3
-            Average runtime:
-            Total runtime: 
+        1.0.0-beta3 [MKL]
+            Average runtime: 61.491 seconds
+            Total runtime: 307.461 seconds
 
 Training the same 5 classifiers in parallel:
     Intel 6920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
@@ -78,16 +78,16 @@ Training the same 5 classifiers in parallel:
             Runtime: 11.417 seconds
 
     AMD 1700X, 32 GB ram, Ubuntu 16.04 LTS, 8 cores (16 threads)
-        0.9.1:
+        0.9.1: [OpenBLAS]
             Runtime: 46.967 seconds
-        1.0.0-beta3:
-            Runtime: 
+        1.0.0-beta3: [MKL]
+            Runtime: 18.109 seconds
 
     AMD 1950X, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
-        0.9.1:
+        0.9.1: [OpenBLAS]
             Runtime: 810.631 seconds
-        1.0.0-beta3:
-            Runtime: 
+        1.0.0-beta3: [MKL]
+            Runtime: 27.291 seconds
 
 I'm lost as far as how to proceed to solve this issue, if somebody sees something in the code that obviously won't work
 well for high core count CPUs please point it out, I need to get this resolved. 

@@ -60,7 +60,7 @@ well for high core count CPUs please point it out, I need to get this resolved.
 Some questions:
     - How is the 1700X training 5 classifiers in parallel faster than it can train a single classifier? 
     - Why is the 1950x so much slower than the 1700x when they both have the same base clock (assuming worst case, no boost) 
-    when runnin serially?
+    when running serially?
     - Why did the 1950x take significantly longer running in parallel when the 1700x saw a speedup running in parallel?
     - Thread scheduling issue?
     - NUMA issue?

@@ -19,40 +19,40 @@ The repo should load up as an IntelliJ project if you would prefer to run it tha
 
 Training the same classifier 5 times serially:
     Intel 6920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
-        Average runtime: 9,754 ms
-        Total runtime: 48,774 ms
+        Average runtime: 9.754 seconds
+        Total runtime: 48.774 seconds
 
     Intel 8700B, 16 GB ram, MacOS 10.14, 6 cores (12 threads)
-        Average runtime: 11,358 ms
-        Total runtime: 56,793 ms
+        Average runtime: 11.358 seconds
+        Total runtime: 56.793 seconds
 
     Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads)
-        Average runtime:
-        Total runtime:
+        Average runtime: 24.808 seconds
+        Total runtime: 119.167 seconds
 
     AMD 1700X, 32 GB ram, Ubuntu 16.04 LTS, 8 cores (16 threads)
-        Average runtime: 55,383 ms
-        Total runtime: 276,917 ms
+        Average runtime: 55.383 seconds
+        Total runtime: 276.917 seconds 
 
     AMD 1950X, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
-        Average runtime: 85,282 ms
-        Total runtime: 426,413 ms
+        Average runtime: 85.282 seconds
+        Total runtime: 426.413 seconds
 
 Training the same 5 classifiers in parallel:
     Intel 6920HQ, 16 GB ram, MacOS 10.14, 4 cores (8 threads)
-        Runtime: 35,926 ms
+        Runtime: 35.926 seconds
 
     Intel 8700B, 16 GB ram, MacOS 10.14, 6 cores (12 threads)
-        Runtime: 46,211 ms
+        Runtime: 46.211 seconds
 
     Intel 7980XE, 32 GB ram, Ubuntu 16.04 LTS, 18 cores (36 threads)
-        Runtime:
+        Runtime: 292.449 seconds
 
     AMD 1700X, 32 GB ram, Ubuntu 16.04 LTS, 8 cores (16 threads)
-        Runtime: 46,967 ms
+        Runtime: 46.967 seconds
 
     AMD 1950X, 64 GB ram, Windows 10 (whatever the current update is), 16 cores (32 threads)
-        Runtime: 810,631 ms
+        Runtime: 810.631 seconds
 
 I'm lost as far as how to proceed to solve this issue, if somebody sees something in the code that obviously won't work
 well for high core count CPUs please point it out, I need to get this resolved. 

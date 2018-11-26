@@ -1,7 +1,7 @@
 buildscript{
     ext {
-        //dl4j_v = "0.9.1"
-        dl4j_v = "1.0.0-beta3"
+        dl4j_v = "0.9.1"
+        //dl4j_v = "1.0.0-beta3"
     }
 }
 
@@ -29,13 +29,16 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
 
     // DL4J Imports
-    compile group: "org.nd4j", name: "nd4j-native-platform", version:"${dl4j_v}"
+    //compile group: "org.nd4j", name: "nd4j-native-platform", version:"${dl4j_v}"
+    //compile group: 'org.deeplearning4j', name: 'deeplearning4j-cuda-8.0', version: '0.8.0'
+    compile group: 'org.nd4j', name: 'nd4j-cuda-8.0-platform', version: '0.9.1'
+
     compile group: "org.deeplearning4j", name: "deeplearning4j-core", version:"${dl4j_v}"
     compile group: "org.deeplearning4j", name: "deeplearning4j-nlp", version:"${dl4j_v}"
     compile group: "org.deeplearning4j", name: "deeplearning4j-zoo", version:"${dl4j_v}"
     compile group: "org.deeplearning4j", name: "deeplearning4j-ui_2.11", version:"${dl4j_v}"
-    //compile group: "org.deeplearning4j", name: "deeplearning4j-parallel-wrapper_2.11", version:"${dl4j_v}"
-    compile group: "org.deeplearning4j", name: "deeplearning4j-parallel-wrapper", version:"${dl4j_v}"
+    compile group: "org.deeplearning4j", name: "deeplearning4j-parallel-wrapper_2.11", version:"${dl4j_v}"
+    //compile group: "org.deeplearning4j", name: "deeplearning4j-parallel-wrapper", version:"${dl4j_v}"
     compile group: "org.deeplearning4j", name: "arbiter-deeplearning4j", version:"${dl4j_v}"
     compile group: "org.deeplearning4j", name: "arbiter-ui_2.11", version:"${dl4j_v}"
     compile group: "org.datavec", name: "datavec-data-codec", version:"${dl4j_v}"

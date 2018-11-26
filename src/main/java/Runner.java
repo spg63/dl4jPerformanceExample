@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Runner {
-    static int numSerialRuns = 5;
+    static int numSerialRuns = 1;
+    static int numParallel = 25;
 
     public static void main(String[] args) throws Exception {
         List<Long> serialTimes = serial();
@@ -42,7 +43,7 @@ public class Runner {
     public static long parallel() throws InterruptedException {
         List<Thread> threads = new ArrayList<>();
 
-        for(int i = 0; i < numSerialRuns; ++i)
+        for(int i = 0; i < numParallel; ++i)
             threads.add(new Thread(new ParallelWrapper(new CSVExample())));
 
         Stopwatch timer = Stopwatch.createStarted();
